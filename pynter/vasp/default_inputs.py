@@ -40,7 +40,8 @@ class DefaultInputs:
            'U': 'U', 'V': 'V_pv', 'W': 'W_pv', 'Xe': 'Xe', 'Y': 'Y_sv', 
            'Yb': 'Yb_2', 'Zn': 'Zn', 'Zr': 'Zr_sv'
            }
-        self.potcar_symbols = [self.default_potcar_symbols[el.symbol] for el in self.structure.composition.elements]
+        if self.structure:
+            self.potcar_symbols = [self.default_potcar_symbols[el.symbol] for el in self.structure.composition.elements]
 
         
     @property
